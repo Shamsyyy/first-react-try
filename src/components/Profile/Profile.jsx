@@ -6,7 +6,7 @@ const Profile = () => {
         <div>
             <div>
                 <img
-                    src='https://thumbs.dreamstime.com/b/beautiful-rain-forest-ang-ka-nature-trail-doi-inthanon-national-park-thailand-36703721.jpg' alt='s'/>
+                    src='https://freefrontend.com/assets/img/css-headers-footers/Sexy-Animated-Rainbow-Waves-Header.png' alt='s'/>
             </div>
             <div>
                 ava + dissk
