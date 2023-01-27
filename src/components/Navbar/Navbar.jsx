@@ -1,6 +1,5 @@
 import React from "react";
 import classes from "./Navbar.module.css";
-console.log(classes)
 const Navbar = () => {
     return (
         <div className={classes.nav}>
