@@ -8,13 +8,13 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
-
+import classes from "./components/Navbar/Navbar.module.css";
 const App = () => {
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>
-                <Navbar/>
+                <Navbar activeFunc={ tempIvent => tempIvent.isActive ? classes.activeLink : classes.item }/>
                 <div className='app-wrapper-content'>
                     <Routes>
                         <Route path="/profile" element={<Profile/>}/>
