@@ -1,21 +1,14 @@
 import React from "react";
 import classes from './Profile.module.css'
 import MyPosts from "./MyPosts/MyPosts";
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
+
 const Profile = () => {
     return (
-        <div>
-            <div>
-                <img
-                    src='https://freefrontend.com/assets/img/css-headers-footers/Sexy-Animated-Rainbow-Waves-Header.png' alt='s'/>
-            </div>
-            <div>
-                ava + dissk
-            </div>
-            <div>
-                <MyPosts/>
-            </div>
+        <div className={classes.div}>
+            <ProfileInfo/>
+            <MyPosts/>
         </div>
     )
 }
-
 export default Profile;
