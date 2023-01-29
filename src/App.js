@@ -9,7 +9,10 @@ import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import classes from "./components/Navbar/Navbar.module.css";
-const App = () => {
+
+
+
+const App = (props) => {
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
@@ -17,8 +20,8 @@ const App = () => {
                 <Navbar activeFunc={ tempIvent => tempIvent.isActive ? classes.activeLink : classes.item }/>
                 <div className='app-wrapper-content'>
                     <Routes>
-                        <Route path="/profile" element={<Profile/>}/>
-                        <Route path="/dialogs/*" element={<Dialogs />}/>
+                        <Route path="/profile" element={<Profile />}/>
+                        <Route path="/dialogs/*" element={<Dialogs dialogs={props.dialogs}/>}/>
                         <Route path="/News" element={<News/>}/>
                         <Route path="/music" element={<Music/>}/>
                         <Route path="/settings" element={<Settings/>}/>
