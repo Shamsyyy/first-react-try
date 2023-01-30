@@ -20,11 +20,11 @@ const App = (props) => {
                 <Navbar activeFunc={ tempIvent => tempIvent.isActive ? classes.activeLink : classes.item }/>
                 <div className='app-wrapper-content'>
                     <Routes>
-                        <Route path="/profile" element={<Profile />}/>
-                        <Route path="/dialogs/*" element={<Dialogs dialogs={props.dialogs}/>}/>
-                        <Route path="/News" element={<News/>}/>
-                        <Route path="/music" element={<Music/>}/>
-                        <Route path="/settings" element={<Settings/>}/>
+                        <Route path="/profile" element={<Profile posts={props.posts}/>}/>
+                        <Route path="/dialogs/*" element={<Dialogs dialogs={props.dialogs} messages={props.messages}/>}/>
+                        <Route path="/News" element={<News />}/>
+                        <Route path="/music" element={<Music />}/>
+                        <Route path="/settings" element={<Settings />}/>
                     </Routes>
                 </div>
             </div>
