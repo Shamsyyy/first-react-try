@@ -5,6 +5,7 @@
 }
 
 .item a {
+    font-size: 30px;
     color: white;
     text-decoration: none;
 }
@@ -12,3 +13,9 @@
 .item a.activeLink {
     color: cornflowerblue;
 }
+
+.friends {
+    margin-top: 25px;
+}
+
+
