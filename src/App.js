@@ -20,7 +20,9 @@ const App = (props) => {
                 <Navbar state={props.state.sidebar} activeFunc={ tempIvent => tempIvent.isActive ? classes.activeLink : classes.item }/>
                 <div className='app-wrapper-content'>
                     <Routes>
-                        <Route path="/profile" element={<Profile state={props.state.profilePage}/>}/>
+                        <Route path="/profile" element={<Profile
+                            state={props.state.profilePage}
+                            addPost={props.addPost}/>}/>
                         <Route path="/dialogs/*" element={<Dialogs state={props.state.dialogsPage}/>}/>
                         <Route path="/News" element={<News />}/>
                         <Route path="/music" element={<Music />}/>
