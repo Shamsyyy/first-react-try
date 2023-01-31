@@ -15,3 +15,7 @@
 .active {
     color: gold;
 }
+.messages .addPost {
+    padding-top: 20px;
+    vertical-align: bottom;
+}
