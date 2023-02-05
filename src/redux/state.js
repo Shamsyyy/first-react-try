@@ -3,6 +3,7 @@ const UNDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const ADD_MESSAGE = 'ADD-MESSAGE';
 const UNDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
 
+// need refactor code this state/store!!!!!!!
 
 let store = {
     _state: {
