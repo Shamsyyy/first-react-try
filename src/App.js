@@ -12,6 +12,7 @@ import classes from "./components/Navbar/Navbar.module.css";
 
 
 const App = (props) => {
+    debugger;
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
