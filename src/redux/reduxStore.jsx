@@ -14,4 +14,6 @@ export const store = configureStore({
     reducer: rootReducers
 })
 
+window.store = store;
+
 export default store;

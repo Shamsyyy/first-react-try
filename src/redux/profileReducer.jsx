@@ -1,5 +1,5 @@
 const ADD_POST = 'ADD-POST';
-const UNDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 
 let initialState = {
     posts: [
@@ -22,7 +22,7 @@ const profileReducer = (state = initialState, action) => {
             state.posts.push(newPost)
             state.newPostText = '';
             break;
-        case UNDATE_NEW_POST_TEXT:
+        case UPDATE_NEW_POST_TEXT:
             state.newPostText = action.newText;
             break;
         default:
@@ -33,7 +33,7 @@ const profileReducer = (state = initialState, action) => {
 
 export const addPostCreator = () => ({type: ADD_POST})
 export const updateNewPostTextCreator = (text) => ({
-    type: UNDATE_NEW_POST_TEXT, newText: text
+    type: UPDATE_NEW_POST_TEXT, newText: text
 })
 
 export default profileReducer;
