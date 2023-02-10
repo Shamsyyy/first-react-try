@@ -16,7 +16,7 @@ const App = (props) => {
         <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>
-                <Navbar state={props.state.sidebarReducer}
+                <Navbar state={props.store.getState().sidebarReducer}
                         activeFunc={ tempIvent => tempIvent.isActive ? classes.activeLink : classes.item }/>
                 <div className='app-wrapper-content'>
                     <Routes>
