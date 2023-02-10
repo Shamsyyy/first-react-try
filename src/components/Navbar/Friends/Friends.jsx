@@ -1,7 +1,6 @@
 import React from "react";
 import classes from "./Friends.module.css";
 import Friend from "./Friend/Friend";
-import StoreContext from "../../../StoreContext";
 
 const Friends = (props) => {
 
