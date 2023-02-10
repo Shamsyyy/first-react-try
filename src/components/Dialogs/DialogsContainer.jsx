@@ -41,8 +41,9 @@ import {connect} from "react-redux";
 
 let mapStateToProps = (state) => {
     return {
-        state: state,
-        newMessageText: state.newMessageText
+        dialogs: state.dialogsReducer.dialogs,
+        messages: state.dialogsReducer.messages,
+        newMessageText: state.dialogsReducer.newMessageText
     }
 }
 let mapDispatchToProps = (dispatch) => {
