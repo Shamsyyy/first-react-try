@@ -5,7 +5,7 @@ import Friend from "./Friend/Friend";
 const Friends = (props) => {
 
     let friendsElements =
-        props.friends.map(f => <Friend name={f.name} src={f.src} id={f.id}/>);
+        props.friends.map(f => <Friend name={f.name} src={f.src} key={f.id} id={f.id}/>);
 
     return (
         <div className={classes.item}>
