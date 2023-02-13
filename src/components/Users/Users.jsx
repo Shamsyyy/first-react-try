@@ -31,12 +31,15 @@ class Users extends React.Component {
             pages.push(i);
         }
 
-
+        let curP = this.props.currentPage;               //Карусель массива номеров страниц
+        let curPF = ((curP - 5) < 0) ?  0  : curP - 5 ;  //Begin
+        let curPL = curP + 5;                            //End
+        let slicedPages = pages.slice( curPF, curPL);    //сделано через Array.slice():
 
         return (
             <div>
                 <div>
-                    {pages.map(p => {
+                    {slicedPages.map(p => {              //заменено pages.map(***)  на slicedPages.map(***)
                         return (
                             <span
                                 className={this.props.currentPage === p && classes.selectedPage}
