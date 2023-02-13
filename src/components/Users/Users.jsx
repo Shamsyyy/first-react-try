@@ -12,10 +12,10 @@ class Users extends React.Component {
                 this.props.setTotalUsersCount(response.data.totalCount)
             });
     }
-    onPageChanged = (pageNumber) => {
-    this.props.setCurrentPage(pageNumber);
+    onPageChanged = (currentPage) => {
+    this.props.setCurrentPage(currentPage);
         axios
-            .get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`)  //get API
+            .get(`https://social-network.samuraijs.com/api/1.0/users?page=${currentPage}&count=${this.props.pageSize}`)  //get API
             .then(response => {
                 this.props.setUsers(response.data.items)
             });
