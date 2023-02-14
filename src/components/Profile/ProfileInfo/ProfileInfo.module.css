@@ -1,4 +1,13 @@
 
-.discriptionBlock {
+.descriptionBlock {
     padding: 10px;
+}
+
+.description {
+    padding: 5px;
+
+}
+
+.itemDescriprion {
+    margin-top: 10px;
 }

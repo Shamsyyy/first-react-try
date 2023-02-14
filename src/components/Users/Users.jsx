@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./Users.module.css"
 import userPhoto from "../../assets/image/user.png"
+import {NavLink} from "react-router-dom";
 
 let Users = (props) => {
 
@@ -13,9 +14,9 @@ let Users = (props) => {
     }
 
     let curP = props.currentPage;                    //Карусель массива номеров страниц
-    let curPF = ((curP - 5) < 0) ?  0  : curP - 5 ;  //Begin
+    let curPF = ((curP - 5) < 0) ? 0 : curP - 5;  //Begin
     let curPL = curP + 4;                            //End
-    let slicedPages = pages.slice( curPF, curPL);    //сделано через Array.slice():
+    let slicedPages = pages.slice(curPF, curPL);    //сделано через Array.slice():
 
 
     return (
@@ -36,8 +37,10 @@ let Users = (props) => {
                 props.users.map(u => <div key={u.id}>
                     <span>
                         <div>
-                            <img src={u.photos.small != null ? u.photos.small : userPhoto}
+                            <NavLink to={"/profile/" + u.id}>
+                                <img src={u.photos.small != null ? u.photos.small : userPhoto}
                                  className={classes.userPhoto}/>
+                            </NavLink>
                         </div>
                         <div>
                             {
