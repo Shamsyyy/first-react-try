@@ -21,8 +21,10 @@ const App = (props) => {
                         activeFunc={ tempIvent => tempIvent.isActive ? classes.activeLink : classes.item }/>
                 <div className='app-wrapper-content'>
                     <Routes>
-                        <Route path="/profile/*" element={<ProfileContainer /*store={props.store}*//>}/>
-                        <Route path="/dialogs/*" element={<DialogsContainer /*store={props.store}*//>}/>
+                        <Route path="/profile" element={<ProfileContainer/>}>
+                            <Route path=":userId" element={<ProfileContainer/>}/>
+                        </Route>
+                        <Route path="/dialogs/*" element={<DialogsContainer />}/>
                         <Route path="/users" element={<UsersContainer />}/>
                         <Route path="/News" element={<News />}/>
                         <Route path="/music" element={<Music />}/>
