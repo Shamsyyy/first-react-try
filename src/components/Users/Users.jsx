@@ -2,8 +2,6 @@ import React from "react";
 import classes from "./Users.module.css"
 import userPhoto from "../../assets/image/user.png"
 import {NavLink} from "react-router-dom";
-import axios from "axios";
-import {followedAPI} from "../../API/api";
 
 let Users = (props) => {
 
@@ -16,9 +14,9 @@ let Users = (props) => {
     }
 
     let curP = props.currentPage;                    //Карусель массива номеров страниц
-    let curPF = ((curP - 5) < 0) ? 0 : curP - 5;  //Begin
+    let curPF = ((curP - 5) < 0) ? 0 : curP - 5;     //Begin
     let curPL = curP + 4;                            //End
-    let slicedPages = pages.slice(curPF, curPL);    //сделано через Array.slice():
+    let slicedPages = pages.slice(curPF, curPL);     //сделано через Array.slice():
 
 
     return (
@@ -45,31 +43,15 @@ let Users = (props) => {
                             </NavLink>
                         </div>
                         <div>
-                            {
-                                u.followed
-                                    ? <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
-                                        props.toggleFollowingProgress(true, u.id)
-                                        followedAPI.unFollow(u.id) //get API
-                                            .then(data => {
-                                                if (data.resultCode === 0) {
-                                                    props.unfollow(u.id)
-                                                }
-                                                props.toggleFollowingProgress(false, u.id)
-                                            });
-                                    }}>Unfollow</button>
-
-                                    : <button disabled={props.followingInProgress.some(id => id === u.id)}  onClick={() => {
-
-                                        props.toggleFollowingProgress(true, u.id)
-                                        followedAPI.follow(u.id) //get API
-                                            .then(data => {
-                                                if (data.resultCode === 0) {
-                                                    props.follow(u.id)
-                                                }
-                                                props.toggleFollowingProgress(false, u.id)
-                                            });
-                                    }}>Follow</button>
-                            }
+                        {u.followed
+                            ? <button disabled={props.followingInProgress
+                                .some(id => id === u.id)}
+                                      onClick={() => { props.unfollow(u.id) }}>
+                                Unfollow</button>
+                            : <button disabled={props.followingInProgress
+                                .some(id => id === u.id)}
+                                      onClick={() => { props.follow(u.id) }}>
+                                Follow</button>}
 
                         </div>
                     </span>

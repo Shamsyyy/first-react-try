@@ -14,17 +14,14 @@ export const usersAPI = {
     getUsers(currentPage, pageSize){
         return  instanse
             .get(`users?page=${currentPage}&count=${pageSize}`).then(response => response.data);
-    }
-}
-
-export const followedAPI = {
-    unFollow(id){
-        return  instanse
-            .delete(`follow/${id}`, {}).then(response => response.data);
     },
-    follow(id){
+    unfollow(userId){
         return  instanse
-            .post(`follow/${id}`, null).then(response => response.data);
+            .delete(`follow/${userId}`);
+    },
+    follow(userId){
+        return  instanse
+            .post(`follow/${userId}`);
     }
 }
 
