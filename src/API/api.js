@@ -22,15 +22,14 @@ export const usersAPI = {
     follow(userId){
         return  instanse
             .post(`follow/${userId}`);
-    }
-}
-
-export const profileAPI = {
+    },
     getProfile(userId){
         return  instanse
             .get(`profile/${userId}`).then(response => response.data);
     }
 }
+
+
 export const authAPI = {
     loginMe(){
         return  instanse
