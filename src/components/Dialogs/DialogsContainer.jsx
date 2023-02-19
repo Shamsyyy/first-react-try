@@ -43,7 +43,8 @@ let mapStateToProps = (state) => {
     return {
         dialogs: state.dialogsReducer.dialogs,
         messages: state.dialogsReducer.messages,
-        newMessageText: state.dialogsReducer.newMessageText
+        newMessageText: state.dialogsReducer.newMessageText,
+        isAuth: state.authReducer.isAuth
     }
 }
 let mapDispatchToProps = (dispatch) => {
