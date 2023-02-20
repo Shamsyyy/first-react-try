@@ -18,8 +18,6 @@ debugger
         props.onMessageChange(text);
     }
 
-    if (!props.isAuth) return <Navigate to={"/Login"}/>;
-
     return (
         <div className={classes.dialogs}>
             <div className={classes.dialogsItems}>
