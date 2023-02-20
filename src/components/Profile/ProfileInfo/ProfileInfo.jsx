@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./ProfileInfo.module.css"
 import Preloader from "../../Common/Preloader/Preloader";
-
+import ProfileStatus from "./ProfileStatus"
 const ProfileInfo = (props) => {
     if (!props.profile) {
         return <Preloader/>
@@ -9,14 +9,14 @@ const ProfileInfo = (props) => {
 
     return (
         <div>
-            <div>
+{/*            <div>
                 <img
                     src='https://freefrontend.com/assets/img/css-headers-footers/Sexy-Animated-Rainbow-Waves-Header.png'
                     alt='s'/>
-            </div>
+            </div>*/}
             <div className={classes.descriptionBlock}>
                 <img src={props.profile.photos.large}/>
-                ava + description
+                <ProfileStatus status={"test hellow"} />
                 <div className={classes.description}>
                     <div className={classes.itemDescriprion}>{props.profile.aboutMe}</div>
                     <div className={classes.itemDescriprion}>Мое полное имя: {props.profile.fullName}</div>

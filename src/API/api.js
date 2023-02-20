@@ -26,6 +26,10 @@ export const usersAPI = {
     getProfile(userId){
         return  instanse
             .get(`profile/${userId}`).then(response => response.data);
+    },
+    getProfileStatus(userId){
+        return  instanse
+            .get(`profile/status/${userId}`).then(response => response.data);
     }
 }
 
