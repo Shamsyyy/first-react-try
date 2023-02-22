@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-const instanse = axios.create({
+const instance = axios.create({
     withCredentials: true,
     baseURL: 'https://social-network.samuraijs.com/api/1.0/',
     headers: {
@@ -12,31 +12,42 @@ const instanse = axios.create({
 
 export const usersAPI = {
     getUsers(currentPage, pageSize){
-        return  instanse
+        return  instance
             .get(`users?page=${currentPage}&count=${pageSize}`).then(response => response.data);
     },
     unfollow(userId){
-        return  instanse
+        return  instance
             .delete(`follow/${userId}`);
     },
     follow(userId){
-        return  instanse
+        return  instance
             .post(`follow/${userId}`);
     },
     getProfile(userId){
-        return  instanse
+        console.warn('Obsolete method. Please profileAPI object.')
+        return  profileAPI.getProfile(userId);
+    },
+
+}
+
+export const profileAPI = {
+    getProfile(userId){
+        return  instance
             .get(`profile/${userId}`).then(response => response.data);
     },
-    getProfileStatus(userId){
-        return  instanse
-            .get(`profile/status/${userId}`).then(response => response.data);
+    getStatus(userId){
+        return instance
+            .get(`profile/status/` + userId);
+    },
+    updateStatus(status) {
+        return instance
+            .put(`profile/status`, { status: status })
     }
 }
 
-
 export const authAPI = {
     loginMe(){
-        return  instanse
+        return  instance
             .get(`auth/me`).then(response => response.data);
     }
 }
