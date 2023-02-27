@@ -4,8 +4,9 @@ import {Input} from "../Common/FormsControls/FormsControls";
 import {required} from "../../utils/validators";
 import {connect} from "react-redux";
 import {login, logout} from "../../redux/authReducer";
-import {Navigate, Route} from "react-router-dom";
-import ProfileContainer from "../Profile/ProfileContainer";
+import {Navigate} from "react-router-dom";
+import classes from "../Common/FormsControls/FormsControls.module.css"
+
 const LoginForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
@@ -20,6 +21,7 @@ const LoginForm = (props) => {
             <div>
                 <Field component={Input} name={"rememberMe"} type={"checkbox"}/> remember me
             </div>
+            { props.error && <div className={classes.formSummaryError}>{props.error}</div> }
             <div>
                 <button>Login</button>
             </div>
