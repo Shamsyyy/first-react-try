@@ -12,7 +12,10 @@ class ProfileContainer extends React.Component {
         debugger
         let userId = this.props.router.params.userId;
         if (!userId) {
-            userId=this.props.authorizedUserId; //need fixxxxxxxxx!!!!
+            userId=this.props.authorizedUserId;
+            if (!userId) {
+                this.props.router.navigate('/login');
+            }
         }
         this.props.getUserProfile(userId);
         this.props.getStatus(userId);
