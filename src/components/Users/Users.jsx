@@ -17,7 +17,7 @@ let Users = (props) => {
     let curPF = ((curP - 5) < 0) ? 0 : curP - 5;     //Begin
     let curPL = curP + 4;                            //End
     let slicedPages = pages.slice(curPF, curPL);     //сделано через Array.slice():
-
+    debugger
 
     return (
         <div>
@@ -46,11 +46,15 @@ let Users = (props) => {
                         {u.followed
                             ? <button disabled={props.followingInProgress
                                 .some(id => id === u.id)}
-                                      onClick={() => { props.unfollow(u.id) }}>
+                                      onClick={() => {
+                                          props.unfollow(u.id)
+                                      }}>
                                 Unfollow</button>
                             : <button disabled={props.followingInProgress
                                 .some(id => id === u.id)}
-                                      onClick={() => { props.follow(u.id) }}>
+                                      onClick={() => {
+                                          props.follow(u.id)
+                                      }}>
                                 Follow</button>}
 
                         </div>
