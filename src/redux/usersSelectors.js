@@ -1,6 +1,9 @@
+import {createSelector} from "@reduxjs/toolkit";
+
 export const getUsers = (state) => {
     return state.usersReducer.users;
 }
+
 export const getPageSize = (state) => {
     return state.usersReducer.pageSize;
 }
