@@ -47,16 +47,6 @@ class UsersContainer extends React.Component {
     }
 }
 
-/*let mapStateToProps = (state) => {
-    return {
-        users: state.usersReducer.users,
-        pageSize: state.usersReducer.pageSize,
-        totalUsersCount: state.usersReducer.totalUsersCount,
-        currentPage: state.usersReducer.currentPage,
-        isFetching: state.usersReducer.isFetching,
-        followingInProgress: state.usersReducer.followingInProgress
-    }
-};*/
 let mapStateToProps = (state) => {
     return {
         users: getUsers(state),
@@ -67,33 +57,6 @@ let mapStateToProps = (state) => {
         followingInProgress: getFollowingInProgress(state)
     }
 };
-/*let mapDispatchToProps = (dispatch) => {
-    return {
-        follow: (userId) => {
-            dispatch(followAC(userId))
-        },
-
-        unfollow: (userId) => {
-            dispatch(unfollowAC(userId))
-        },
-
-        setUsers: (users) => {
-            dispatch(setUserAC(users))
-        },
-
-        setCurrentPage: (currentPage) => {
-            dispatch(setCurrentPageAC(currentPage))
-        },
-
-        setTotalUsersCount: (totalCount) => {
-            dispatch(setTotalUsersCountAC(totalCount))
-        },
-        toggleIsFetching: (isFetching) => {
-            dispatch(toggleIsFetching(isFetching))
-        }
-    }
-};*/
-
 
 export default compose(
     connect(mapStateToProps, {follow, unfollow, setCurrentPage,
