@@ -4,7 +4,7 @@ import Post from "./Post/Post";
 import {Field, reduxForm} from "redux-form";
 import {maxLengthCreator, required} from "../../../utils/validators";
 import {Textarea} from "../../Common/FormsControls/FormsControls";
-
+//test
 const MyPosts = React.memo(props => {
     console.log("renderer")
     let postsElements =
