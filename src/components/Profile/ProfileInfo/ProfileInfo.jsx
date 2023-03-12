@@ -9,11 +9,6 @@ const ProfileInfo = (props) => {
 
     return (
         <div>
-{/*            <div>
-                <img
-                    src='https://freefrontend.com/assets/img/css-headers-footers/Sexy-Animated-Rainbow-Waves-Header.png'
-                    alt='s'/>
-            </div>*/}
             <div className={classes.descriptionBlock}>
                 <img src={props.profile.photos.large}/>
                 <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus} />
