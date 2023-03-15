@@ -13,16 +13,15 @@ import {
     getTotalUsersCount,
 } from "../../redux/usersSelectors";
 
-
 class UsersContainer extends React.Component {
     componentDidMount() {
-        this.props.getUsers(this.props.currentPage, this.props.pageSize) //thunk
+        const {currentPage, pageSize} = this.props
+        this.props.getUsers(currentPage, pageSize) //thunk
     }
 
-
     onPageChanged = (currentPage) => {
-
-        this.props.getUsers(currentPage, this.props.pageSize)            //thunk
+        const {pageSize} = this.props
+        this.props.getUsers(currentPage, pageSize)            //thunk
 
     }
 
