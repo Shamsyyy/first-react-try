@@ -1,23 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App.js';
 import reportWebVitals from './reportWebVitals';
 import store from "./redux/reduxStore";
-import {Provider} from "react-redux";
-import {BrowserRouter} from "react-router-dom";
+import SamuraiJSApp from "./App.js";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
     root.render(
         <React.StrictMode>
-            <Provider store = {store}>
-                <BrowserRouter>
-            <App /*state={state}*/
+            <SamuraiJSApp /*state={state}*/
                  store={store}
                  dispatch={store.dispatch.bind(store)}/>
-                </BrowserRouter>
-            </Provider>
         </React.StrictMode>
     );
 
