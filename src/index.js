@@ -9,7 +9,7 @@ import SamuraiJSApp from "./App.js";
 const root = ReactDOM.createRoot(document.getElementById('root'));
     root.render(
         <React.StrictMode>
-            <SamuraiJSApp /*state={state}*/
+            <SamuraiJSApp
                  store={store}
                  dispatch={store.dispatch.bind(store)}/>
         </React.StrictMode>
