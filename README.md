@@ -1,4 +1,4 @@
-npm start or yarn start
+yarn start
 
 
 First project on react
