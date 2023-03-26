@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/first-react-try/static/css/main.be6f7d89.css",
-    "main.js": "/first-react-try/static/js/main.adafd829.js",
+    "main.js": "/first-react-try/static/js/main.eb58c6bb.js",
     "static/css/975.bc9a7d79.chunk.css": "/first-react-try/static/css/975.bc9a7d79.chunk.css",
     "static/js/975.ddc0f17c.chunk.js": "/first-react-try/static/js/975.ddc0f17c.chunk.js",
     "static/css/793.fe031807.chunk.css": "/first-react-try/static/css/793.fe031807.chunk.css",
@@ -10,7 +10,7 @@
     "index.html": "/first-react-try/index.html",
     "static/media/preloader.svg": "/first-react-try/static/media/preloader.c1629a4261cb0c4a29813172b7aee336.svg",
     "main.be6f7d89.css.map": "/first-react-try/static/css/main.be6f7d89.css.map",
-    "main.adafd829.js.map": "/first-react-try/static/js/main.adafd829.js.map",
+    "main.eb58c6bb.js.map": "/first-react-try/static/js/main.eb58c6bb.js.map",
     "975.bc9a7d79.chunk.css.map": "/first-react-try/static/css/975.bc9a7d79.chunk.css.map",
     "975.ddc0f17c.chunk.js.map": "/first-react-try/static/js/975.ddc0f17c.chunk.js.map",
     "793.fe031807.chunk.css.map": "/first-react-try/static/css/793.fe031807.chunk.css.map",
@@ -19,6 +19,6 @@
   },
   "entrypoints": [
     "static/css/main.be6f7d89.css",
-    "static/js/main.adafd829.js"
+    "static/js/main.eb58c6bb.js"
   ]
 }
