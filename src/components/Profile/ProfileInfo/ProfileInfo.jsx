@@ -3,18 +3,27 @@ import classes from "./ProfileInfo.module.css"
 import Preloader from "../../Common/Preloader/Preloader";
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 import userPhoto from "../../../assets/image/user.png";
+
 const ProfileInfo = (props) => {
     if (!props.profile) {
         return <Preloader/>
     }
-
+    
+    const onMainPhotoSelected = (e) => {
+        if (e.target.files.length) {
+            props.savePhoto(e.target.files[0])
+        }
+    }
+    
     return (
         <div>
             <div className={classes.descriptionBlock}>
                 <img src={props.profile.photos.large != null ? props.profile.photos.large : userPhoto}
-                     className={classes.userPhoto} />
-
-                <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus} />
+                     className={classes.userPhoto}/>
+                <div>
+                    {props.isOwner && <input type={"file"} onChange={onMainPhotoSelected}/>}
+                </div>
+                <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
                 <div className={classes.description}>
                     <div className={classes.itemDescriprion}>{props.profile.aboutMe}</div>
                     <div className={classes.itemDescriprion}>Мое полное имя: {props.profile.fullName}</div>
