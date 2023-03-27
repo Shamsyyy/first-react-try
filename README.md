@@ -10,3 +10,5 @@ to test the app: https://shamsyyy.github.io/first-react-try/
 
 Email: free@samuraijs.com
 Password: free
+
+If you want to create your profile: https://social-network.samuraijs.com/signUp
