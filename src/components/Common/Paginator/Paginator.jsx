@@ -19,7 +19,7 @@ let Paginator = ({totalItemsCount ,pageSize , onPageChanged, currentPage, portio
 
 
     // previous version
-/*     let curP = currentPage;                          //Карусель массива номеров страниц
+/*  let curP = currentPage;                          //Карусель массива номеров страниц
     let curPF = ((curP - 5) < 0) ? 0 : curP - 5;     //Begin
     let curPL = curP + 4;                            //End
     let slicedPages = pages.slice(curPF, curPL);     //сделано через Array.slice():
