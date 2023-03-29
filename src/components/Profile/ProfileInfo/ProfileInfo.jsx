@@ -35,14 +35,13 @@ const ProfileInfo = (props) => {
                 <div>
                     {props.isOwner && <input type={"file"} onChange={onMainPhotoSelected}/>}
                 </div>
-
+                <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
                 {editMode
                     ? <ProfileDataForm profile={props.profile} initialValues={props.profile} onSubmit={onSubmit}/>
                     : <ProfileData goToEditMode={() => {
                         setEditMode(true)
                     }} profile={props.profile} isOwner={props.isOwner}/>}
 
-                <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
 
             </div>
         </div>
@@ -50,22 +49,24 @@ const ProfileInfo = (props) => {
 }
 
 const ProfileData = (props) => {
-    return (
-        <div className={classes.description}>
+    return (<div>
             {props.isOwner && <div>
                 <button onClick={props.goToEditMode}>edit</button>
             </div>}
-            <div className={classes.itemDescriprion}>
-                <div>Мое полное имя: {props.profile.fullName}</div>
-                <div> Looking for a job: {props.profile.lookingForAJob ? "yes" : "no"}</div>
-                <div> My professional skills: {props.profile.lookingForAJobDescription}</div>
-                <div> About me: {props.profile.aboutMe}</div>
-            </div>
-            <div className={classes.itemDescriprion}>
-                Мои контакты: {Object.keys(props.profile.contacts).map(key => {
-                    return <Contact key={key} contactTitle={key} contactValue={props.profile.contacts[key]}/>
-                }
-            )}
+            <div className={classes.description}>
+
+                <div className={classes.itemDescriprion}>
+                    <div>Мое полное имя: {props.profile.fullName}</div>
+                    <div> Looking for a job: {props.profile.lookingForAJob ? "yes" : "no"}</div>
+                    {props.profile.lookingForAJob ? <div> My professional skills: {props.profile.lookingForAJobDescription}</div> : null}
+                    <div> About me: {props.profile.aboutMe}</div>
+                </div>
+                <div className={classes.itemDescriprion}>
+                    Мои контакты: {Object.keys(props.profile.contacts).map(key => {
+                        return <Contact key={key} contactTitle={key} contactValue={props.profile.contacts[key]}/>
+                    }
+                )}
+                </div>
             </div>
         </div>
     )
@@ -73,7 +74,7 @@ const ProfileData = (props) => {
 
 const Contact = ({contactTitle, contactValue}) => {
     return (
-        <div className={classes.contact}>{contactTitle} : {contactValue}</div>
+        contactValue && <div className={classes.contact}>{contactTitle} : {contactValue}</div>
     )
 }
 export default ProfileInfo;
