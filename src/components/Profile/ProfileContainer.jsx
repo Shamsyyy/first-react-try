@@ -54,14 +54,7 @@ let mapStateToProps = (state) => ({
     isAuth: state.authReducer.isAuth
 });
 
-/*//HOC
-let AuthRedirectComponent = withAuthRedirect(ProfileContainer)
 
-let WithUrlDataContainerComponent = withRouter(AuthRedirectComponent);
-
-connect(mapStateToProps, {
-    getUserProfile
-})(withRouter(WithUrlDataContainerComponent))*/
 export default compose(
     connect(mapStateToProps, {getUserProfile, getStatus, updateStatus, savePhoto, saveProfile}),
     withRouter,
