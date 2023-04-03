@@ -1,6 +1,7 @@
+
 .nav {
     grid-area: n;
-    background-color: burlywood;
+    background-color: #0d1117;
     padding: 20px;
 }
 
@@ -11,6 +12,10 @@
 }
 
 .item a.activeLink {
+    color: cornflowerblue;
+}
+
+.item:hover {
     color: cornflowerblue;
 }
 
