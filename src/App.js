@@ -1,7 +1,7 @@
 import React, {Suspense} from "react";
 import './App.css';
 import Navbar from "./components/Navbar/Navbar";
-import {BrowserRouter, HashRouter, Route, Routes} from "react-router-dom";
+import {HashRouter, Route, Routes} from "react-router-dom";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
@@ -15,6 +15,7 @@ import {withRouter} from "./hoc/withRouter";
 import {initializeApp} from "./redux/appReducer";
 import Preloader from "./components/Common/Preloader/Preloader";
 import store from "./redux/reduxStore";
+import Footer from "./components/Footer/Footer";
 
 const DialogsContainer = React.lazy(() => import("./components/Dialogs/DialogsContainer"));
 const ProfileContainer = React.lazy(() => import("./components/Profile/ProfileContainer"));
@@ -30,6 +31,7 @@ class App extends React.Component {
         }
 
         return (
+
             <div className='app-wrapper'>
                 <HeaderContainer/>
                 <Navbar state={this.props.store.getState().sidebarReducer}
@@ -49,6 +51,7 @@ class App extends React.Component {
                         </Routes>
                     </Suspense>
                 </div>
+                <Footer/>
             </div>
         )
     }

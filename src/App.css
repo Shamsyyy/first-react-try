@@ -1,18 +1,18 @@
+
 .app-wrapper {
-    width: 100%;
-    margin: auto;
-    height: 100%;
+    height:100vh;
     display: grid;
     grid-template-areas:
             "h h"
-            "n c";
+            "n c"
+            "f f";
     grid-template-rows: 60px 1fr;
     grid-template-columns: 2fr 10fr;
 
 }
 
 .app-wrapper-content {
-
+    height: 100%;
     grid-area: c;
     background-color: #010409;
 }
