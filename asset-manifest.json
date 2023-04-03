@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/first-react-try/static/css/main.f9c3dfd5.css",
-    "main.js": "/first-react-try/static/js/main.41912add.js",
+    "main.css": "/first-react-try/static/css/main.ef19b0db.css",
+    "main.js": "/first-react-try/static/js/main.0f9b4049.js",
     "static/css/975.bc9a7d79.chunk.css": "/first-react-try/static/css/975.bc9a7d79.chunk.css",
     "static/js/975.ddc0f17c.chunk.js": "/first-react-try/static/js/975.ddc0f17c.chunk.js",
     "static/css/780.f2295d0e.chunk.css": "/first-react-try/static/css/780.f2295d0e.chunk.css",
@@ -10,8 +10,8 @@
     "static/media/user.png": "/first-react-try/static/media/user.0d14c6999b4a5c8e86a7.png",
     "index.html": "/first-react-try/index.html",
     "static/media/preloader.svg": "/first-react-try/static/media/preloader.c1629a4261cb0c4a29813172b7aee336.svg",
-    "main.f9c3dfd5.css.map": "/first-react-try/static/css/main.f9c3dfd5.css.map",
-    "main.41912add.js.map": "/first-react-try/static/js/main.41912add.js.map",
+    "main.ef19b0db.css.map": "/first-react-try/static/css/main.ef19b0db.css.map",
+    "main.0f9b4049.js.map": "/first-react-try/static/js/main.0f9b4049.js.map",
     "975.bc9a7d79.chunk.css.map": "/first-react-try/static/css/975.bc9a7d79.chunk.css.map",
     "975.ddc0f17c.chunk.js.map": "/first-react-try/static/js/975.ddc0f17c.chunk.js.map",
     "780.f2295d0e.chunk.css.map": "/first-react-try/static/css/780.f2295d0e.chunk.css.map",
@@ -19,7 +19,7 @@
     "787.9c4083a9.chunk.js.map": "/first-react-try/static/js/787.9c4083a9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f9c3dfd5.css",
-    "static/js/main.41912add.js"
+    "static/css/main.ef19b0db.css",
+    "static/js/main.0f9b4049.js"
   ]
 }
