@@ -1,10 +1,13 @@
 import React from "react";
 import classes from './Music.module.css'
-const Music = () => {
+
+
+    const Music = () => {
     return (
         <div>
-            Music
+            music
         </div>
+
     )
 }
 
