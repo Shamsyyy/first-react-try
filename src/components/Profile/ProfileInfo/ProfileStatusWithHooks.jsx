@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import classes from "./ProfileInfo.module.scss";
 
 const ProfileStatusWithHooks = (props) => {
     let [editMode, setEditMode] = useState(false);      //HOOKS
@@ -19,11 +20,13 @@ const ProfileStatusWithHooks = (props) => {
     const onStatusChange = (e) => {
         setStatus(e.currentTarget.value);
     }
+    let clue = "Double click to change status"
         return (
             <div>
+
                 {!editMode &&
                     <div> <span>Status: </span>
-                            <span onDoubleClick={activateEditMode}>
+                            <span data-hint={clue} className={classes.tooltip} onDoubleClick={activateEditMode}>
                                 {props.status || "non status"}
                             </span>
                     </div>

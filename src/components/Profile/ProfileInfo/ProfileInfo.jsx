@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import classes from "./ProfileInfo.module.css"
+import classes from "./ProfileInfo.module.scss"
 import Preloader from "../../Common/Preloader/Preloader";
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 import userPhoto from "../../../assets/image/user.png";
@@ -28,19 +28,23 @@ const ProfileInfo = (props) => {
     }
 
     return (
-        <div>
+        <div className={classes.parent}>
             <div className={classes.descriptionBlock}>
                 <img src={props.profile.photos.large != null ? props.profile.photos.large : userPhoto}
                      className={classes.userPhoto}/>
-                <div>
-                    {props.isOwner && <input type={"file"} onChange={onMainPhotoSelected}/>}
+                <div className={classes.btn}>
+                    {props.isOwner && <label> Загрузить фотографию
+                        <input className={classes.customInputFile} type={"file"} onChange={onMainPhotoSelected}/>
+                    </label>}
+                </div >
+                    <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
+                <div className={classes.profileInfo}>
+                    {editMode
+                        ? <ProfileDataForm profile={props.profile} initialValues={props.profile} onSubmit={onSubmit}/>
+                        : <ProfileData goToEditMode={() => {
+                            setEditMode(true)
+                        }} profile={props.profile} isOwner={props.isOwner}/>}
                 </div>
-                <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
-                {editMode
-                    ? <ProfileDataForm profile={props.profile} initialValues={props.profile} onSubmit={onSubmit}/>
-                    : <ProfileData goToEditMode={() => {
-                        setEditMode(true)
-                    }} profile={props.profile} isOwner={props.isOwner}/>}
 
 
             </div>
@@ -49,16 +53,19 @@ const ProfileInfo = (props) => {
 }
 
 const ProfileData = (props) => {
-    return (<div>
-            {props.isOwner && <div>
-                <button onClick={props.goToEditMode}>edit</button>
-            </div>}
+    return (
+        <div>
+            <div className={classes.buttonEdit}>
+                {props.isOwner && <div>
+                    <button onClick={props.goToEditMode}>edit</button>
+                </div>}
+            </div>
             <div className={classes.description}>
-
                 <div className={classes.itemDescriprion}>
                     <div>Мое полное имя: {props.profile.fullName}</div>
                     <div> Looking for a job: {props.profile.lookingForAJob ? "yes" : "no"}</div>
-                    {props.profile.lookingForAJob ? <div> My professional skills: {props.profile.lookingForAJobDescription}</div> : null}
+                    {props.profile.lookingForAJob ?
+                        <div> My professional skills: {props.profile.lookingForAJobDescription}</div> : null}
                     <div> About me: {props.profile.aboutMe}</div>
                 </div>
                 <div className={classes.itemDescriprion}>

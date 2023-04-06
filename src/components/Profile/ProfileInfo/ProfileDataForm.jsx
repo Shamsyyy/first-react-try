@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./ProfileInfo.module.css"
+import classes from "./ProfileInfo.module.scss"
 import styles from "../../Common/FormsControls/FormsControls.module.css";
 import {createField, Input, Textarea} from "../../Common/FormsControls/FormsControls";
 import {reduxForm} from "redux-form";
@@ -7,7 +7,7 @@ import {reduxForm} from "redux-form";
 const ProfileDataForm = ({handleSubmit, ...props}) => {
     return (
         <form onSubmit={handleSubmit}>
-            <div>
+            <div className={classes.buttonEdit}>
                 <button>save</button>
             </div>
             {props.error &&
