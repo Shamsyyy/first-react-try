@@ -1,7 +1,7 @@
 import React, {Suspense} from "react";
 import './App.css';
 import Navbar from "./components/Navbar/Navbar";
-import {HashRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
@@ -16,13 +16,25 @@ import {initializeApp} from "./redux/appReducer";
 import Preloader from "./components/Common/Preloader/Preloader";
 import store from "./redux/reduxStore";
 import Footer from "./components/Footer/Footer";
+import Error404 from "./components/Error/Error404";
 
 const DialogsContainer = React.lazy(() => import("./components/Dialogs/DialogsContainer"));
 const ProfileContainer = React.lazy(() => import("./components/Profile/ProfileContainer"));
 
 class App extends React.Component {
+
+    catchAllUnhandledErrors = (reason, promiseRejectionEvent) => {
+        alert("Some error occurred. Look at the console");
+        console.error(promiseRejectionEvent)
+    }
+
     componentDidMount() {
         this.props.initializeApp();
+        window.addEventListener("unhandledrejection", this.catchAllUnhandledErrors);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener("unhandledrejection", this.catchAllUnhandledErrors);
     }
 
     render() {
@@ -39,6 +51,7 @@ class App extends React.Component {
                 <div className='app-wrapper-content'>
                     <Suspense fallback={<div><Preloader/></div>}>
                         <Routes>
+                            <Route path="/" element={<Navigate to="/profile" />} />
                             <Route path="/profile" element={<ProfileContainer/>}>
                                 <Route path=":userId" element={<ProfileContainer/>}/>
                             </Route>
@@ -48,6 +61,7 @@ class App extends React.Component {
                             <Route path="/music" element={<Music/>}/>
                             <Route path="/settings" element={<Settings/>}/>
                             <Route path="/login" element={<Login/>}/>
+                            <Route path="*" element={<Error404/>}/>
                         </Routes>
                     </Suspense>
                 </div>
@@ -67,13 +81,13 @@ let AppContainer = compose(withRouter,
 
 const SamuraiJSApp = (props) => {
     return (
-        <HashRouter >
+        <BrowserRouter >
             <Provider store={store}>
                 <AppContainer
                     store={store}
                     dispatch={store.dispatch.bind(store)}/>
             </Provider>
-        </HashRouter>)
+        </BrowserRouter>)
 }
 
 export default SamuraiJSApp;
