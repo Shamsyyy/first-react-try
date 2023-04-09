@@ -32,10 +32,16 @@ export const usersAPI = {
 
 export const profileAPI = {
     getProfile(userId){
+        if (userId === null) {
+            return null;
+        }
         return  instance
             .get(`profile/${userId}`).then(response => response.data);
     },
     getStatus(userId){
+        if (userId === null) {
+            return null;
+        }
         return instance
             .get(`profile/status/` + userId);
     },
@@ -57,6 +63,7 @@ export const profileAPI = {
         return instance
             .put(`profile`, profile)
     }
+
 }
 
 export const authAPI = {
