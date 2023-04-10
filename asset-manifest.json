@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/first-react-try/static/css/main.ddd0ae2f.css",
-    "main.js": "/first-react-try/static/js/main.2546a347.js",
+    "main.css": "/first-react-try/static/css/main.37ac9487.css",
+    "main.js": "/first-react-try/static/js/main.b788c1cd.js",
     "static/css/975.81f770e8.chunk.css": "/first-react-try/static/css/975.81f770e8.chunk.css",
     "static/js/975.e4325080.chunk.js": "/first-react-try/static/js/975.e4325080.chunk.js",
-    "static/css/925.614e4ec6.chunk.css": "/first-react-try/static/css/925.614e4ec6.chunk.css",
-    "static/js/925.6d3ae4e3.chunk.js": "/first-react-try/static/js/925.6d3ae4e3.chunk.js",
+    "static/css/925.123dc154.chunk.css": "/first-react-try/static/css/925.123dc154.chunk.css",
+    "static/js/925.680f38bb.chunk.js": "/first-react-try/static/js/925.680f38bb.chunk.js",
     "static/js/787.9c4083a9.chunk.js": "/first-react-try/static/js/787.9c4083a9.chunk.js",
     "static/media/user.png": "/first-react-try/static/media/user.0d14c6999b4a5c8e86a7.png",
     "index.html": "/first-react-try/index.html",
     "static/media/preloader.svg": "/first-react-try/static/media/preloader.6861289ef477c1bb1dcc06c4d7537690.svg",
-    "main.ddd0ae2f.css.map": "/first-react-try/static/css/main.ddd0ae2f.css.map",
-    "main.2546a347.js.map": "/first-react-try/static/js/main.2546a347.js.map",
+    "main.37ac9487.css.map": "/first-react-try/static/css/main.37ac9487.css.map",
+    "main.b788c1cd.js.map": "/first-react-try/static/js/main.b788c1cd.js.map",
     "975.81f770e8.chunk.css.map": "/first-react-try/static/css/975.81f770e8.chunk.css.map",
     "975.e4325080.chunk.js.map": "/first-react-try/static/js/975.e4325080.chunk.js.map",
-    "925.614e4ec6.chunk.css.map": "/first-react-try/static/css/925.614e4ec6.chunk.css.map",
-    "925.6d3ae4e3.chunk.js.map": "/first-react-try/static/js/925.6d3ae4e3.chunk.js.map",
+    "925.123dc154.chunk.css.map": "/first-react-try/static/css/925.123dc154.chunk.css.map",
+    "925.680f38bb.chunk.js.map": "/first-react-try/static/js/925.680f38bb.chunk.js.map",
     "787.9c4083a9.chunk.js.map": "/first-react-try/static/js/787.9c4083a9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ddd0ae2f.css",
-    "static/js/main.2546a347.js"
+    "static/css/main.37ac9487.css",
+    "static/js/main.b788c1cd.js"
   ]
 }
