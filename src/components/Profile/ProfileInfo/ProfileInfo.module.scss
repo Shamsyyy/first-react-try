@@ -89,6 +89,11 @@ button, label {
         background-color: #479bfc;
         border-color: #479bfc;
     }
+  &:disabled {
+    border: 1px solid #30363d;
+    background-color: #010409;
+    color: white;
+  }
 }
 
 

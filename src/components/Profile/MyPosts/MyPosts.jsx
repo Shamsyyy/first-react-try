@@ -35,7 +35,7 @@ const AddPostForm = (props) => {
             <div>
                 <div>
                     <Field component={Textarea} placeholder={"Enter you text"}
-                           name={"newPostText"} validate={[required, maxLengthCreator(10)]}/>
+                           name={"newPostText"} validate={[ maxLengthCreator(300)]}/>
                 </div>
                 <div>
                     <button>Add post</button>
