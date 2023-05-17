@@ -1,6 +1,15 @@
 const ADD_MESSAGE = 'ADD-MESSAGE';
 // const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
 
+type DialogType = {
+    id: number,
+    name: string
+}
+type MessageType = {
+    id: number,
+    message: string
+}
+
 let initialState = {
     dialogs: [
         {id: 1, name: 'Daur'},
@@ -9,16 +18,19 @@ let initialState = {
         {id: 4, name: 'Sasha'},
         {id: 5, name: 'Misha'},
         {id: 6, name: 'Pasha'},
-    ],
+    ] as Array<DialogType>,
     messages: [
         {id: 1, message: 'Hi'},
         {id: 2, message: 'How is your course?'},
         {id: 3, message: 'Yo'},
         {id: 4, message: 'Yo'},
         {id: 5, message: 'Yo'},
-    ]
+    ] as Array<MessageType>
 }
-const dialogsReducer = (state = initialState, action) => {
+
+export type InitialStateType = typeof initialState
+
+const dialogsReducer = (state = initialState, action :any): InitialStateType => {
 
     switch (action.type) {
         case ADD_MESSAGE:
@@ -29,7 +41,7 @@ const dialogsReducer = (state = initialState, action) => {
             return  {
                 ...state,
                 messages: [...state.messages, NewMessage],
-                newMessageText: ''
+                /*newMessageText: ''*/
             }
         /*case UPDATE_NEW_MESSAGE_TEXT:
             return {
@@ -42,8 +54,12 @@ const dialogsReducer = (state = initialState, action) => {
     }
 }
 
+type AddMessageCreatorActionType = {
+    type: typeof ADD_MESSAGE
+    newMessageText: string,
+}
 
-export const addMessageCreator = (newMessageText) => ({type: ADD_MESSAGE, newMessageText})
+export const addMessageCreator = (newMessageText: string): AddMessageCreatorActionType => ({type: ADD_MESSAGE, newMessageText})
 /*
 export const updateNewMessageTextCreator = (text) => ({
     type: UPDATE_NEW_MESSAGE_TEXT, newText: text

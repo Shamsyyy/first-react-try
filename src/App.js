@@ -12,11 +12,12 @@ import Login from "./components/Login/Login";
 import { compose } from "redux";
 import { connect, Provider } from "react-redux";
 import { withRouter } from "./hoc/withRouter";
-import { initializeApp } from "./redux/appReducer";
+import { initializeApp } from "./redux/appReducer.ts";
 import Preloader from "./components/Common/Preloader/Preloader";
 import store from "./redux/reduxStore";
 import Footer from "./components/Footer/Footer";
 import Error404 from "./components/Error/Error404";
+
 
 const DialogsContainer = React.lazy(() => import("./components/Dialogs/DialogsContainer"));
 const ProfileContainer = React.lazy(() => import("./components/Profile/ProfileContainer"));
