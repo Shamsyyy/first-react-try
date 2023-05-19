@@ -7,9 +7,10 @@ import usersReducer from "./usersReducer";
 import authReducer from "./authReducer";
 import thunkMiddleware from 'redux-thunk'
 import {reducer as formReducer} from 'redux-form'
-import appReducer from "./appReducer.ts";
+import appReducer from "./appReducer";
 
-let rootReducers = combineReducers({
+
+let rootReducer = combineReducers({
     dialogsReducer,
     profileReducer,
     sidebarReducer,
@@ -19,11 +20,17 @@ let rootReducers = combineReducers({
     form: formReducer
 });
 
-export const store = configureStore({
-        reducer: rootReducers
-    }, applyMiddleware(thunkMiddleware)
-)
+type RootReducerType = typeof rootReducer;
+export type AppStateType = ReturnType<RootReducerType>;
 
+
+
+export const store = configureStore({
+    reducer: rootReducer,
+    middleware: [thunkMiddleware] // заменили applyMiddleware на middleware
+});
+
+// @ts-ignore
 window.store = store;
 
 export default store;
