@@ -1,4 +1,4 @@
-import {authAPI, securityAPI} from "../API/api";
+import {authAPI, ResultCodeForCaptcha, ResultCodesEnum, securityAPI} from "../API/api";
 import {stopSubmit} from "redux-form";
 
 
@@ -66,17 +66,17 @@ export const getCaptchaUrlSuccess = (captchaUrl: string) :GetCaptchaUrlSuccessAc
 //THUNK CREATE
 export const getAuthUserData = () => async (dispatch : any) => {
     let response = await authAPI.loginMe()  //get API
-    if (response.data.resultCode === 0) {
+    if (response.data.resultCode === ResultCodesEnum.Success) {
         let {email, id, login} = response.data.data;
         dispatch(setAuthUserData(id, email, login, true))
     }
 }
 export const login = (email :string, password :string, rememberMe :boolean, captcha :any) => async (dispatch :any) => {
     let response = await authAPI.login(email, password, rememberMe, captcha)  //get API
-    if (response.data.resultCode === 0) {
+    if (response.data.resultCode === ResultCodesEnum.Success) {
         dispatch(getAuthUserData())
     } else {
-        if (response.data.resultCode === 10) {
+        if (response.data.resultCode === ResultCodeForCaptcha.CaptchaIsRequired) {
             dispatch(getCaptchaUrl())
         }
         let message = response.data.messages.length > 0 ? response.data.messages[0] : "Some error";
