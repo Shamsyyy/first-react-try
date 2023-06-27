@@ -71,7 +71,7 @@ export const getAuthUserData = () => async (dispatch : any) => {
         dispatch(setAuthUserData(id, email, login, true))
     }
 }
-export const login = (email :string, password :string, rememberMe :boolean, captcha :any) => async (dispatch :any) => {
+export const login = (email :string, password :string, rememberMe :boolean, captcha :string) => async (dispatch :any) => {
     let response = await authAPI.login(email, password, rememberMe, captcha)  //get API
     if (response.data.resultCode === ResultCodesEnum.Success) {
         dispatch(getAuthUserData())
