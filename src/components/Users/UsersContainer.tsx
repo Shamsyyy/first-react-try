@@ -79,8 +79,6 @@ let mapStateToProps = (state: AppStateType): MapStatePropsType => {
     }
 };
 
-let mapDispatchToProps
-
 export default compose(
     connect<MapStatePropsType, MapDispatchPropsType, OwnPropsType, AppStateType>
     (mapStateToProps, {
