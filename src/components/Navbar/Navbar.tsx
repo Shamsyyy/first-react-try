@@ -4,7 +4,13 @@ import {NavLink} from "react-router-dom";
 import Friends from "./Friends/Friends";
 
 
-const Navbar = (props) => {
+type NavbarPropsType = {
+    state: { friends: any },
+    activeFunc: (tempIvent: { isActive: boolean }) => string;
+
+}
+
+const Navbar: React.FC<NavbarPropsType> = (props) => {
 
     return (
         <div className={classes.nav}>

@@ -1,8 +1,8 @@
 import React from "react";
-import preloader from "../../../assets/image/preloader.svg";
+
 import classes from "./Preloader.module.scss"
 
-let Preloader = (props) => {
+let Preloader: React.FC = () => {
     return (
         <div className={classes.preloader}>
             <div className={classes.ldsRoller}>

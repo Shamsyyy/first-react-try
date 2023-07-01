@@ -1,8 +1,7 @@
 import React from "react";
 import classes from "./Friend.module.css";
 
-
-const Friend = (props) => {
+const Friend: React.FC<any> = (props) => {
     return (
         <div className={classes.item}>
             <img

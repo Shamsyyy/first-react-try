@@ -5,16 +5,16 @@ import cn from "classnames";
 type PropsType = {
     totalItemsCount: number,
     pageSize: number,
-    onPageChanged: (pageNumber: number) => void,
-    currentPage: number,
+    onPageChanged?: (pageNumber: number) => void,
+    currentPage?: number,
     portionSize?: number
-    setCurrentPage: any
+    setCurrentPage?: any
 }
 
 let Paginator: React.FC<PropsType> = ({totalItemsCount,
                                           pageSize ,
-                                          onPageChanged,
-                                          currentPage,
+                                          onPageChanged = x => x,
+                                          currentPage= 1,
                                           setCurrentPage,
                                           portionSize = 10}) => {
 

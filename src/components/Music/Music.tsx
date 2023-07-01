@@ -2,7 +2,7 @@ import React from "react";
 import classes from './Music.module.css'
 
 
-    const Music = () => {
+    const Music: React.FC = () => {
     return (
         <div>
             music

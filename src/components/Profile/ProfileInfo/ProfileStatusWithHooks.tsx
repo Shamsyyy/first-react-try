@@ -1,7 +1,13 @@
-import React, {useEffect, useState} from "react";
+import React, {ChangeEvent, useEffect, useState} from "react";
 import classes from "./ProfileInfo.module.scss";
 
-const ProfileStatusWithHooks = (props) => {
+type PropsType = {
+    status: string,
+    updateStatus: (status: string) => void
+    isOwner: boolean
+}
+
+const ProfileStatusWithHooks: React.FC<PropsType> = (props) => {
     let [editMode, setEditMode] = useState(false);      //HOOKS
     let [status, setStatus] = useState(props.status);            //HOOKS
 
@@ -17,7 +23,7 @@ const ProfileStatusWithHooks = (props) => {
         props.updateStatus(status);
     }
 
-    const onStatusChange = (e) => {
+    const onStatusChange = (e: ChangeEvent<HTMLInputElement>) => {
         setStatus(e.currentTarget.value);
     }
     let clue = "Double click to change status"

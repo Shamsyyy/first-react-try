@@ -2,7 +2,14 @@ import React from "react";
 import classes from "./Friends.module.css";
 import Friend from "./Friend/Friend";
 
-const Friends = (props) => {
+export type FriendsPropsType = {
+    friends: Array<{
+        name: string,
+        id: number,
+        src: string }>
+}
+
+const Friends: React.FC<FriendsPropsType> = (props) => {
 
     let friendsElements =
         props.friends.map(f => <Friend name={f.name} src={f.src} key={f.id} id={f.id}/>);

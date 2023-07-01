@@ -2,7 +2,7 @@ import React from "react";
 import classes from './Footer.module.css';
 import {NavLink} from "react-router-dom";
 
-const Footer = (props) => {
+const Footer: React.FC = () => {
     return (
         <div className={classes.footer}>
             <div className={classes.company}><p className={classes.companyItem}>Ⓒ 2023 - Shhhamsy</p></div>

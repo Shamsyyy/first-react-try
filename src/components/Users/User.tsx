@@ -3,7 +3,16 @@ import classes from "./Users.module.css"
 import userPhoto from "../../assets/image/user.png"
 import {NavLink} from "react-router-dom";
 import styles from "./User.module.css"
-let User = ({user, followingInProgress, unfollow, follow}) => {
+import {UserType} from "../../types/types";
+
+type PropsType = {
+    user: UserType,
+    followingInProgress: Array<number>,
+    unfollow: (userId: number) => void,
+    follow: (userId: number) => void,
+}
+
+let User: React.FC<PropsType> = ({user, followingInProgress, unfollow, follow}) => {
     return (
         <div>
                     <div className={styles.itemProfile}>
