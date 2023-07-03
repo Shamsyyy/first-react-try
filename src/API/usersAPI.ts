@@ -1,4 +1,4 @@
-import {GetItemsType, instance} from "./api";
+import {APIResponseType, GetItemsType, instance} from "./api";
 
 
 export const usersAPI = {
@@ -8,10 +8,10 @@ export const usersAPI = {
     },
     unfollow(userId: number) {
         return instance
-            .delete<ResponseType>(`follow/${userId}`);
+            .delete(`follow/${userId}`).then(res => res.data) as Promise<APIResponseType>;
     },
     follow(userId: number) {
         return instance
-            .post<ResponseType>(`follow/${userId}`);
+            .post(`follow/${userId}`).then(res => res.data) as Promise<APIResponseType>;
     }
 }
