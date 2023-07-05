@@ -26,7 +26,6 @@ let Users: React.FC<PropsType> = ({totalUsersCount, pageSize, onPageChanged, cur
             <div className={classes.paginator}>
                 <Paginator totalItemsCount={totalUsersCount} pageSize={pageSize}
                            onPageChanged={onPageChanged} currentPage={currentPage}/>
-                <UsersSearchForm  onFilterChanged={props.onFilterChanged}/>
             </div>
             <div>
                 {
