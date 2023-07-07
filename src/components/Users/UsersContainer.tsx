@@ -1,22 +1,12 @@
-import React, {useEffect} from 'react';
-import {connect} from "react-redux";
-import {FilterType, follow, requestUsers, unfollow} from "../../redux/usersReducer";
-import Users from "./Users";
+import React from 'react';
+import {useSelector} from "react-redux";
+import {FilterType} from "../../redux/usersReducer";
 import Preloader from "../Common/Preloader/Preloader";
-import {compose} from "redux";
-import {
-    getUsers,
-    getCurrentPage,
-    getFollowingInProgress,
-    getIsFetching,
-    getPageSize,
-    getTotalUsersCount, getUsersFilter,
-} from "../../redux/usersSelectors";
+import {getIsFetching,} from "../../redux/usersSelectors";
 import {UserType} from "../../types/types";
-import {AppStateType} from "../../redux/reduxStore";
-import {actions} from "../../redux/usersReducer";
+import {Users} from "./Users";
 
-type MapStatePropsType = {
+/*type MapStatePropsType = {
     currentPage: number,
     pageSize: number,
     isFetching: boolean,
@@ -25,20 +15,33 @@ type MapStatePropsType = {
     followingInProgress: Array<number>,
     filter: FilterType
 }
-type MapDispatchPropsType = {
+/*type MapDispatchPropsType = {
     getUsers: (currentPage: number, pageSize: number, filter: FilterType) => void,
     unfollow: (userId: number) => void,
     follow: (userId: number) => void,
     setCurrentPage: (currentPage: number) => void,
     toggleFollowingProgress: (isFetching: boolean, userId: number) => void,
-
 }
 type OwnPropsType = {
     pageTitle: string
 }
 
-type PropsType = MapStatePropsType & MapDispatchPropsType & OwnPropsType
+//type PropsType = MapStatePropsType & MapDispatchPropsType & OwnPropsType
+*/
+type UsersPagePropsType = {
+    pageTitle: string
+}
 
+export const UsersPage: React.FC<UsersPagePropsType> = (props) => {
+    const isFetching = useSelector(getIsFetching)
+    return <>
+        <h2>{props.pageTitle}</h2>
+        {isFetching ? <Preloader/> : null}
+        <Users />
+    </>
+}
+
+/*
 const UsersContainer: React.FC<PropsType> = (props) => {
     const {currentPage, pageSize, filter} = props;
 
@@ -46,35 +49,32 @@ const UsersContainer: React.FC<PropsType> = (props) => {
         props.getUsers(currentPage, pageSize, filter); //thunk
     }, [currentPage, pageSize, filter.term]);
 
-    const onPageChanged = (currentPage: number) => {
+/!*    const onPageChanged = (currentPage: number) => {
         props.getUsers(currentPage, pageSize, filter); //thunk
     };
-
     const onFilterChanged = (filter: FilterType) => {
         props.getUsers(1, pageSize, filter)
-    }
+    }*!/
 
     return (
         <div>
             {props.isFetching ?
                 <Preloader/>
                 : <Users
-                    totalUsersCount={props.totalUsersCount}
+                    /!*totalUsersCount={props.totalUsersCount}
                     pageSize={props.pageSize}
                     currentPage={props.currentPage}
                     onPageChanged={onPageChanged}
                     onFilterChanged={onFilterChanged}
                     users={props.users}
-                    follow={props.follow}
-                    unfollow={props.unfollow}
                     followingInProgress={props.followingInProgress}
+                    follow={props.follow}
+                    unfollow={props.unfollow}*!/
                 />}
 
         </div>
     )
 }
-
-
 let mapStateToProps = (state: AppStateType): MapStatePropsType => {
     return {
         users: getUsers(state),
@@ -94,3 +94,4 @@ export default compose(
         toggleFollowingProgress: actions.toggleFollowingProgress, getUsers: requestUsers
     })
 )(UsersContainer);
+*/

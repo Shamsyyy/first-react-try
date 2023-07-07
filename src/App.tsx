@@ -6,9 +6,9 @@ import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import classes from "./components/Navbar/Navbar.module.css";
-import UsersContainer from "./components/Users/UsersContainer";
+import {UsersPage} from "./components/Users/UsersContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
-import Login from "./components/Login/Login";
+
 import {compose} from "redux";
 import {connect, Provider} from "react-redux";
 import withRouter from "./hoc/withRouter";
@@ -17,6 +17,7 @@ import Preloader from "./components/Common/Preloader/Preloader";
 import store, {AppStateType} from "./redux/reduxStore";
 import Footer from "./components/Footer/Footer";
 import Error404 from "./components/Error/Error404";
+import {Login} from "./components/Login/Login";
 
 
 
@@ -61,7 +62,7 @@ const App: React.FC<PropsType> = (props) => {
                             <Route path=":userId" element={<ProfileContainer/>}/>
                         </Route>
                         <Route path="/dialogs/*" element={<DialogsContainer/>}/>
-                        <Route path="/users" element={<UsersContainer pageTitle="Test"/>}/>
+                        <Route path="/users" element={<UsersPage  pageTitle={"test"}/>}/>
                         <Route path="/News" element={<News/>}/>
                         <Route path="/music" element={<Music/>}/>
                         <Route path="/settings" element={<Settings/>}/>

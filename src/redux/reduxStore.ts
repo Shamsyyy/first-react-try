@@ -20,8 +20,16 @@ let rootReducer = combineReducers({
     form: formReducer
 });
 
+
+
+export const store = configureStore({
+    reducer: rootReducer,
+    middleware: [thunkMiddleware] // заменили applyMiddleware на middleware
+});
+
 type RootReducerType = typeof rootReducer;
 export type AppStateType = ReturnType<RootReducerType>;
+export type AppDispatch = typeof store.dispatch
 
 type PropertiesTypes<T> = T extends {[key: string]: infer U} ? U : never
 export type InferActionsType<T extends {[key: string]: (...args: any[])=> any}> = ReturnType<PropertiesTypes<T>>
@@ -29,10 +37,6 @@ export type InferActionsType<T extends {[key: string]: (...args: any[])=> any}> 
 export type BaseThunkType<A extends Action, R = Promise<void>> = ThunkAction<R, AppStateType, unknown, A>
 
 
-export const store = configureStore({
-    reducer: rootReducer,
-    middleware: [thunkMiddleware] // заменили applyMiddleware на middleware
-});
 
 // @ts-ignore
 window.store = store;

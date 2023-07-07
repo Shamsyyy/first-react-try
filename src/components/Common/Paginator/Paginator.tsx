@@ -3,7 +3,7 @@ import classes from "./Paginator.module.css"
 import cn from "classnames";
 
 type PropsType = {
-    totalItemsCount: number,
+    totalItemsCount: number
     pageSize: number,
     onPageChanged?: (pageNumber: number) => void,
     currentPage?: number,
